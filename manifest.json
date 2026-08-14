@@ -1,0 +1,37 @@
+{
+  "name": "web-novel-writer-pro",
+  "display_name": "网文小说签约专家",
+  "version": "1.0.3",
+  "category": "写作与内容创作",
+  "description": "网文签约级全流程创作系统，覆盖男频女频全品类。11 大模块自由入口：极速创作、签约大纲、自然度润色、拆书分析、风格蒸馏、名家仿写、续写衔接、诊断优化、英文创作、跨媒体改编、AI 伦理审查。写作自然度优化引擎贯穿所有模块并自进化学习，适配 11 大中文 + 3 大英文平台签约标准，中英双语自动切换；内置市场验证协议、多专家模拟评审、反幻觉与版权合规，持续记录用户偏好，越用越懂你。写网文、拆爆款、仿名家、改短剧、拓海外，一句话直达。",
+  "tags": ["webnovel", "writing", "natural-writing", "chinese-novel", "creative-writing", "fiction", "cross-media", "ai-ethics", "market-validation", "anti-hallucination", "legal-compliance", "expert-panel"],
+  "platforms": ["Claude Code", "OpenClaw", "Codex CLI", "ChatGPT", "DeepSeek", "Gemini", "Kimi", "Coze", "SkillHub"],
+  "entry": "SKILL.md",
+  "language": ["zh", "en"],
+  "license": null,
+  "scripts": [
+    { "file": "scripts/quality_check.py", "desc": "章节质量自检（字数/连接词/段落变异/对话/钩子/模板化痕迹）", "type": "python" },
+    { "file": "scripts/adaptation_converter.py", "desc": "小说→短剧/漫画/有声书/游戏格式转换", "type": "python" },
+    { "file": "scripts/state.mjs", "desc": "创作状态持久化（项目/章节/伏笔/自然度追踪）", "type": "node" },
+    { "file": "scripts/blacklist_manager.mjs", "desc": "自进化自然度优化动态黑名单管理", "type": "node" },
+    { "file": "scripts/deploy.mjs", "desc": "一键部署到 Claude/OpenClaw/Codex/通用平台", "type": "node" },
+    { "file": "scripts/knowledge-filter.mjs", "desc": "按模块/阶段/角色精确加载知识文件", "type": "node" },
+    { "file": "scripts/sop-timeliness-check.mjs", "desc": "SOP与参考文档时效性检查", "type": "node" }
+  ],
+  "agents": [
+    { "name": "plot-architect", "role": "故事架构、大纲设计、伏笔布局", "model": "强推理" },
+    { "name": "character-designer", "role": "角色设定、对话DNA、语音指纹", "model": "强文笔" },
+    { "name": "narrative-writer", "role": "正文写作、自然度优化润色、格式合规", "model": "强文笔" },
+    { "name": "consistency-checker", "role": "一致性校验、伏笔追踪、时间线检查", "model": "快速" },
+    { "name": "adaptation-specialist", "role": "跨媒体改编、剧本转换、格式适配", "model": "强文笔" },
+    { "name": "ethics-reviewer", "role": "AI创作伦理审查、合规评估、风险预警", "model": "强推理" }
+  ],
+  "modules": ["A极速创作", "B签约创作", "C润色优化", "D拆书分析", "E风格蒸馏", "F作家仿写", "G续写衔接", "H诊断优化", "I英文创作", "J跨媒体改编", "K AI伦理审查"],
+  "directories": {
+    "references": "知识库（自然度优化引擎/平台指南/签约标准等）",
+    "engine": "执行协议（降级策略/自进化/反幻觉/专家团/市场验证）",
+    "scripts": "工具脚本",
+    "exports": "跨模型导出提示词",
+    "test": "冒烟测试"
+  }
+}
